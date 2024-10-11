@@ -23,5 +23,21 @@ int main()
 
     std::string my_str {"My String"};
     std::cout << my_str << std::endl;
+
+    int a{5};
+    double d{7.2};
+    double product{a*d};
+    std::cout << product << std::endl;
+
+    double division{d/a};
+    std::cout << division << std::endl;
+
+    //double div_ints{a/a_whole_num};
+    //std::cout << div_ints << std::endl;
+
+    std::string str2 {"weather"};
+    char letter{'o'};
+    letter = str2[3];
+    std::cout << letter << std::endl;
     
 }
