@@ -8,3 +8,5 @@ The output can be printed to the command line or stored in a file.
 ## How to intall
 
 ## Authors
+
+## Documentation
