@@ -8,20 +8,39 @@ int main( int argc, char* argv[]){
 
     const std::vector<std::string> cmdLineArgs{argv, argv+argc};
 
-    // printing out the command line arguments
-    for (std::size_t i{0}; i < cmdLineArgs.size(); i++){
-        std::cout << cmdLineArgs[i] << std::endl;
+    // Creating a boolean variable to tell us when help us requested.
+    bool helpRequested{false};
 
-        /*if(cmdLineAgrs[i] == "--help"){
-            std::cout << "This C++ program is used to encrypt and decrypt text. \n ./file_name -i input_file -o output_file -c cipher -k key encryp/decrypt" << std::endl;
+    // Looking through the command line arguments, excluding the first one for signs that help is requested.
+    for (std::size_t i{1}; i < cmdLineArgs.size(); i++){
+        //std::cout << cmdLineArgs[i] << std::endl;
+
+
+        if((cmdLineArgs[i] == "--help") || (cmdLineArgs[i] == "-h") ){
+
+            helpRequested = true;
+
+            //std::cout << "This C++ program is used to encrypt and decrypt text. \n ./file_name -i input_file -o output_file -c cipher -k key encryp/decrypt" << std::endl;
         }
-        else if(cmdLineAgrs[i] == "--h"){
-            std::cout << "This C++ program is used to encrypt and decrypt text. \n ./file_name -i input_file -o output_file -c cipher -k key encryp/decrypt" << std::endl;
         
         
-        } */
     }
 
+    // When help is requested
+    if (helpRequested) {
+        // Print help message
+        std::cout
+        << " mpags-cipher [-h/--help]\n" 
+        << " Encrypt and decrypt alphanumeric text using classical ciphers\n"
+        << " Avaliable options:\n"
+        << " -h | --help        Print this help message and exit\n"
+        << std::endl;
+
+        return 0;
+    }
+
+
+    // Initialising variables
     char in_char{'x'};
     std::string out_str{""};
 
@@ -84,7 +103,7 @@ int main( int argc, char* argv[]){
         }
 
         //- Ignore any other (non-alpha) characters
-        //- In each case, add result to a string variable
+        
     }
 
 
